@@ -9,7 +9,7 @@ app.use(express.json());
 // Configure CORS to allow requests only from your frontend
 app.use(cors()); // Replace with your frontend's origin
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
