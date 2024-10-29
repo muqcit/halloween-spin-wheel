@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import styles from "./SpinWheel.module.css";
+import styles from "./spinWheel.module.css";
 import { useLocation } from "react-router-dom";
 
 const pies = [
