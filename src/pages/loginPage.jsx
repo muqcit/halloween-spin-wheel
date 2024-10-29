@@ -8,10 +8,11 @@ const LoginPage = () => {
     const [errorMessage, setErrorMessage] = useState(""); // State for error message
     const navigate = useNavigate(); // Initialize the navigation function
 
-    // Email validation function
+// Email validation function
     const isValidEmail = (email) => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
+        // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        //     return emailRegex.test(email);
+        return true;
     };
 
     const handleEmailChange = (e) => {
@@ -21,7 +22,7 @@ const LoginPage = () => {
 
     const handleSubmit = async () => {
         if (!isValidEmail(email)) {
-            setErrorMessage("Please enter a valid email address.");
+            setErrorMessage("Please enter a valid id.");
             return;
         }
 
@@ -46,7 +47,7 @@ const LoginPage = () => {
                 <h2>Spin and win the Halloween Offer</h2>
                 <input 
                     type="email" 
-                    placeholder="Enter the email to win in the lucky spin"
+                    placeholder="Enter the id to win in the lucky spin"
                     value={email}
                     onChange={handleEmailChange}
                 />
