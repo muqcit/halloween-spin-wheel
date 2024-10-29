@@ -1,0 +1,124 @@
+.wheelContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    width: auto;
+    gap: 50px;
+}
+
+.spinBtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.wheel {
+    position: relative; /* Add position relative for absolute positioning of arrow */
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    border: 8px solid #444;
+    transition: transform 4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    overflow: hidden;
+    margin-left: 50px;
+}
+
+.arrow {
+    position: absolute !important;
+    top: 43%;
+    left: 55%;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid red; /* Color of the arrow */
+    transform: translate(-50%, -50%); /* Center the arrow */
+    z-index: 10; /* Ensure the arrow is above the wheel */
+}
+
+.spinBtn button {
+    padding: 15px 30px;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(2, 2, 31); /* Dark red background */
+    border: 2px solid #ffcc00; /* Yellow border */
+    border-radius: 10px;
+    cursor: pointer;
+    animation: bounce 1.5s infinite;
+    transition: background-color 0.3s;
+}
+
+.spinBtn button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    animation: none; /* Disable bounce on hover */
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+.segment {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+    border: 2px solid #444;
+    transform-origin: 100% 100%;
+    clip-path: polygon(0% 0%, 50% 0%, 100% 100%, 0% 100%);
+}
+
+.segmentText {
+    transform: rotate(-330deg);
+    position: fixed;
+    right: 35%;
+    top: 60%;
+}
+
+.highlight {
+    background-color: rgba(255, 204, 0, 0.5) !important; /* Semi-transparent highlight */
+}
+
+/* Segment Colors and Rotation */
+.segment:nth-child(1) {
+    background-color: black;
+    transform: rotate(0deg);
+}
+
+.segment:nth-child(2) {
+    background-color: orange;
+    transform: rotate(60deg);
+}
+
+.segment:nth-child(3) {
+    background-color: black;
+    transform: rotate(120deg);
+}
+
+.segment:nth-child(4) {
+    background-color: orange;
+    transform: rotate(180deg);
+}
+
+.segment:nth-child(5) {
+    background-color: black;
+    transform: rotate(240deg);
+}
+
+.segment:nth-child(6) {
+    background-color: orange;
+    transform: rotate(300deg);
+}
